@@ -1,0 +1,6 @@
+option(
+    'debug_prints',
+    type : 'boolean',
+    description : 'Enable debug prints to stdout.',
+    value : false
+)
