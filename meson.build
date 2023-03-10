@@ -16,11 +16,12 @@ boost_dep = dependency(
     modules : ['program_options']
 )
 
-lib_hdrs_dir = include_directories(
-    '/usr/local/lib/',
-    '/path/to/the/csv-parser/single_include',
-    '/path/to/the/rapidjson/include'
-)
+rapidjson = subproject('rapidjson')
+cmake = import('cmake')
+csv_sub = cmake.subproject('csv')
+
+rapidjson_dep = rapidjson.get_variable('rapidjson_dep')
+csv_dep = csv_sub.dependency('csv')
 
 sources = [
     'billchecker.cpp',
@@ -30,6 +31,10 @@ sources = [
 executable(
     'billchecker',
     sources,
-    dependencies: boost_dep,
-    include_directories: lib_hdrs_dir
+    dependencies:
+    [
+        boost_dep,
+        rapidjson_dep,
+        csv_dep
+    ]
 )

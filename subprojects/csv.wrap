@@ -1,0 +1,6 @@
+[wrap-file]
+directory = csv-parser-2.1.3
+
+source_url = https://github.com/vincentlaucsb/csv-parser/archive/refs/tags/2.1.3.zip
+source_filename = csv-parser-2.1.3.zip
+source_hash = 71a0e0cac1f5b0328bc6393d1d4376a97ae6716d96fc22e4c5032e3fa71b6652
